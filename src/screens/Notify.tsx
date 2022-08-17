@@ -4,7 +4,7 @@ import { View, Text } from 'native-base'
 const Notify = () => {
   return (
     <View>
-      <Text>Notnvfjkldnnnvdfklnvkflsfdjlsifyvfdvfd</Text>
+      <Text>Notnvfjkldnnnvdfknvkfldndvkfslnvkflsfdjlsifyvfdvfd</Text>
     </View>
   )
 }
