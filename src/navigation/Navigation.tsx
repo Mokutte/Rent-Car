@@ -15,6 +15,8 @@ const Navigation = () => {
       <StackNavigation />
     </NavigationContainer>
   );
+
+  
 };
 export default Navigation;
 
