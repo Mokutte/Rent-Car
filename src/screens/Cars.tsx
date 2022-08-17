@@ -4,7 +4,8 @@ import React from 'react'
 const Cars = () => {
   return (
     <View>
-      <Text>Carvkdsdvnlsak;nvdlas;ks</Text>
+      <Text>Carvkdsdvnlsajvdfkps
+        k;nvdlas;ks</Text>
     </View>
   )
 }
