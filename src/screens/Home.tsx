@@ -59,71 +59,65 @@ const Home = () => {
         />
       </Box>
 
-      <ScrollView horizontal={true} height={"50px"} h={"96.5px"}>
+      <ScrollView horizontal={true} height={"50px"} h={"96.5px"} showsHorizontalScrollIndicator={false} >
         <Box bg="#d1d1d19f" w={"100px"} mx={"5px"} rounded="lg" justifyContent={"center"} alignItems={"center"}>
           <Image
             source={{
               uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png",
             }}
             alt="BMW"
-            size="xl"
-            w={"70px"}
-            h={"70px"}
+            size={60}
           />
         </Box>
-        <Box bg="#d1d1d19f" p="9" mx={"5px"} rounded="lg">
+        <Box bg="#d1d1d19f" w={"100px"} mx={"5px"} rounded="lg" justifyContent={"center"} alignItems={"center"}>
           <Image
             source={{
-              uri: "https://cdn.worldvectorlogo.com/logos/mercedes-benz.svg.png",
+              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Mercedes-Benz_Star.svg/800px-Mercedes-Benz_Star.svg.png",
             }}
-            alt="BMW"
-            size="xl"
-            w={"70px"}
-            h={"70px"}
+            alt="Mercedes"
+            size={60}
           />
         </Box>
-        <Box bg="#d1d1d19f" p="9" mx={"5px"} rounded="lg">
+        <Box bg="#d1d1d19f" w={"100px"} mx={"5px"} rounded="lg" justifyContent={"center"} alignItems={"center"} >
           <Image
             source={{
-              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png",
+              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/196px-Audi-Logo_2016.svg.png",
             }}
-            alt="BMW"
-            size="xl"
-            w={"70px"}
-            h={"70px"}
+            resizeMode={"contain"}
+            alt="Audi"
+            size={70}
+            
           />
         </Box>
-        <Box bg="#d1d1d19f" p="9" mx={"5px"} rounded="lg">
+        <Box bg="#d1d1d19f" w={"100px"} mx={"5px"} rounded="lg" justifyContent={"center"} alignItems={"center"}>
           <Image
             source={{
-              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png",
+              uri: "https://pngimg.com/uploads/tesla_logo/tesla_logo_PNG16.png",
             }}
-            alt="BMW"
-            size="xl"
-            w={"70px"}
-            h={"70px"}
+            resizeMode={"contain"}
+            alt="Tesla"
+            size={60}
           />
         </Box>
-        <Box bg="#d1d1d19f" p="9" mx={"5px"} rounded="lg">
+        <Box bg="#d1d1d19f" w={"100px"} mx={"5px"} rounded="lg" justifyContent={"center"} alignItems={"center"}>
           <Image
             source={{
-              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png",
+              uri: "https://assets.stickpng.com/images/580b585b2edbce24c47b2c2c.png",
             }}
-            alt="BMW"
-            size="xl"
-            w={"70px"}
-            h={"70px"}
+            resizeMode={"contain"}
+            alt="Bentley"
+            size={80}
           />
         </Box>
-        <Box bg="#d1d1d19f" p="9" mx={"5px"} rounded="lg">
+        <Box bg="#d1d1d19f" w={"100px"} mx={"5px"} rounded="lg" justifyContent={"center"} alignItems={"center"}>
           <Image
             source={{
-              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png",
+              uri: "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Symbol.png",
             }}
+            opacity={"0.8"}
+            resizeMode={"contain"}
             alt="BMW"
-            size="xl"
-            w={"70px"}
-            h={"70px"}
+            size={100}
           />
         </Box>
       </ScrollView>
