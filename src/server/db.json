@@ -1,0 +1,16 @@
+{
+    "brends": [
+        {
+            "id": 1,
+            "nameBrend": "Mercedes",
+            "modeldata": [
+                {
+                    "image": "",
+                    "namemodel": "CLS",
+                    "desp": "Такой апарат я его все",
+                    "price": "150"
+                }
+            ]
+        }
+    ]
+}
