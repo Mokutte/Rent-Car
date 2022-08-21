@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   Box,
   Text,
@@ -10,9 +11,25 @@ import {
   ScrollView,
   View,
 } from "native-base";
+import { useEffect, useState } from "react";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
+
+
+
 const Home = () => {
+  const [ desk, setDesk ] = useState()
+
+ useEffect(() => {
+   axios.get("http://192.168.0.18:3001/brends")
+   .then((response) => {
+   console.log(response.data)})
+   .catch((error) => {
+    console.log(error);
+   })
+ }, [])
+ 
+
   return (
     <View px={"5"} pt={"5"} w={"100%"}>
       <HStack justifyContent={"space-between"} pb={"20px"} pt={"10px"}>
@@ -121,6 +138,10 @@ const Home = () => {
           />
         </Box>
       </ScrollView>
+      <Box  bg="primary.400" p="12" rounded="lg">
+        <Text>asdasdasda</Text>
+      </Box>
+      
     </View>
   );
 };

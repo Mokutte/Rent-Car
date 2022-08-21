@@ -1,16 +1,27 @@
+
+
 {
     "brends": [
         {
             "id": 1,
             "nameBrend": "Mercedes",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Mercedes-Benz_Star.svg/800px-Mercedes-Benz_Star.svg.png",
             "modeldata": [
                 {
-                    "image": "",
                     "namemodel": "CLS",
                     "desp": "Такой апарат я его все",
                     "price": "150"
                 }
             ]
         }
+    ],
+
+    "hooh": [
+        {
+            "id": 1,
+            "nameBrend": "Mercedes"
+        }
     ]
 }
+
+
