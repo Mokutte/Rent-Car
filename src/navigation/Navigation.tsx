@@ -26,8 +26,19 @@ const StackNavigation = () => {
       screenOptions={({ route }) => ({
         tabBarActiveTintColor: "green",
         tabBarInactiveTintColor: "gray",
+        headerShown: false,
       })}
     >
+      <Tab.Screen
+        name="Notify"
+        component={Notify}
+        options={{
+          tabBarLabel: "Notify",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="notifications" color={color} size={size} />
+          ),
+        }}
+      />
       <Tab.Screen
         name="Home"
         component={Home}
@@ -48,16 +59,7 @@ const StackNavigation = () => {
           ),
         }}
       />
-      <Tab.Screen
-        name="Notify"
-        component={Notify}
-        options={{
-          tabBarLabel: "Notify",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="notifications" color={color} size={size} />
-          ),
-        }}
-      />
+      
       <Tab.Screen
         name="Profile"
         component={Profile}
