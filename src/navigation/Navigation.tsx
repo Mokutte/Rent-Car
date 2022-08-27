@@ -35,6 +35,7 @@ const StackNavigation = () => {
         options={{
           tabBarLabel: "Cars",
           tabBarIcon: ({ color, size }) => (
+            // @ts-ignore
             <Ionicons name="car-sport" color={color} size={size} />
           ),
         }}
@@ -45,6 +46,7 @@ const StackNavigation = () => {
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
+             // @ts-ignore
             <Ionicons name="home" color={color} size={size} />
           ),
         }}
@@ -55,6 +57,7 @@ const StackNavigation = () => {
         options={{
           tabBarLabel: "Notify",
           tabBarIcon: ({ color, size }) => (
+             // @ts-ignore
             <Ionicons name="notifications" color={color} size={size} />
           ),
         }}
@@ -67,6 +70,7 @@ const StackNavigation = () => {
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
+             // @ts-ignore
             <Ionicons name="person-circle-outline" color={color} size={size} />
           ),
         }}

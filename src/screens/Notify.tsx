@@ -1,20 +1,12 @@
-import {
-  Box,
-  Text,
-  Input,
-  Image,
-  Select,
-  CheckIcon,
-  HStack,
-  VStack,
-  ScrollView,
-  View,
-  Button,
-} from "native-base";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View, Text } from 'native-base'
+import React from 'react'
 
-const Notify = (props: any) => {
-  return 
-};
+const Notify = () => {
+  return (
+    <View>
+      <Text>Notify</Text>
+    </View>
+  )
+}
 
-export default Notify;
+export default Notify

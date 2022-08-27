@@ -29,6 +29,7 @@ export  const CarCart = (props : CarType) => {
             <Text fontWeight={"bold"} fontSize={15}>{props.nameModel}</Text>
             <Text>{props.typefuel}</Text>
             <HStack alignItems={"center"}>
+              {/* @ts-ignore */}
               <Icon name="star" />
               <Text ml={1}>{props.star}</Text>
             </HStack>

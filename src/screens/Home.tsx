@@ -55,6 +55,7 @@ const Home = () => {
             <Text color={"#646464"}>Твоя страна</Text>
           </HStack>
           <HStack alignItems={"center"}>
+            {/* @ts-ignore */}
             <Icon name="location-arrow" size={15} color="#000000" />
             <Select
               color={"#484848"}
@@ -78,6 +79,7 @@ const Home = () => {
             </Select>
           </HStack>
         </VStack>
+        {/* @ts-ignore */}
         <Icon name="sync" size={50}></Icon>
       </HStack>
 
@@ -94,6 +96,7 @@ const Home = () => {
           onChangeText={setValue}
         />
         <Pressable onPress={() => searchCar(value)} p={"20px"} bg={"#fff"} rounded={"lg"}>
+          {/* @ts-ignore */}
           <Icon name="search"/>
         </Pressable>
       </HStack>
@@ -231,7 +234,7 @@ const Home = () => {
       >
         {cars?.map((cars) => (
           <CarCart
-           key={cars.id}
+            key={cars.id}
             nameModel={cars.nameModel}
             hp={cars.hp}
             image={cars.image}

@@ -20,8 +20,10 @@ const Cars = () => {
     <SafeAreaView>
       <View rounded={"lg"} mx={"5"}>
         <HStack justifyContent={"space-between"} alignItems={"center"}>
+          {/* @ts-ignore */}
           <Icon name={"chevron-thin-left"} size={35}></Icon>
           <Text fontSize={"20px"}> Details</Text>
+          {/* @ts-ignore */}
           <Icon name={"dots-three-horizontal"} size={35}></Icon>
         </HStack>
         <HStack>
