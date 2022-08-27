@@ -22,7 +22,7 @@ export  const CarCart = (props : CarType) => {
               source={{
                 uri: props.image,
               }}
-              alt="fdlspf"
+              alt="Car"
             ></Image>
           </VStack>
           <VStack rounded="lg" py={5}>

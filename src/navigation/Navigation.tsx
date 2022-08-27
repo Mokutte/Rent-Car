@@ -30,12 +30,12 @@ const StackNavigation = () => {
       })}
     >
       <Tab.Screen
-        name="Notify"
-        component={Notify}
+        name="Cars"
+        component={Cars}
         options={{
-          tabBarLabel: "Notify",
+          tabBarLabel: "Cars",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="notifications" color={color} size={size} />
+            <Ionicons name="car-sport" color={color} size={size} />
           ),
         }}
       />
@@ -49,16 +49,17 @@ const StackNavigation = () => {
           ),
         }}
       />
-      <Tab.Screen
-        name="Cars"
-        component={Cars}
+       <Tab.Screen
+        name="Notify"
+        component={Notify}
         options={{
           tabBarLabel: "Notify",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="car-sport" color={color} size={size} />
+            <Ionicons name="notifications" color={color} size={size} />
           ),
         }}
       />
+      
       
       <Tab.Screen
         name="Profile"

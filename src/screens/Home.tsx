@@ -11,7 +11,9 @@ import {
   ScrollView,
   View,
   Button,
+  Pressable,
 } from "native-base";
+import { Keyboard } from "react-native";
 import { useEffect, useState } from "react";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { CarCart } from "../components/CarCart";
@@ -19,6 +21,7 @@ import { CarType } from "./../models/CarType";
 
 const Home = () => {
   const [cars, setCars] = useState<CarType[]>();
+  const [value, setValue] = useState<string | undefined>();
 
   useEffect(() => {
     axios
@@ -31,12 +34,25 @@ const Home = () => {
       });
   }, []);
 
+  const searchCar = (value: string | undefined) => {
+    // Keyboard.dismiss()
+    axios
+      .get(`http://192.168.0.18:3001/cars?nameModel_like=${value}`)
+      .then((response) => {
+        
+        setCars(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   return (
     <View px={"5"} pt={70} flex={1}>
       <HStack justifyContent={"space-between"} pb={"20px"} pt={"10px"}>
         <VStack>
           <HStack>
-            <Text color={"#646464"}>Твоя страна дурачек блять</Text>
+            <Text color={"#646464"}>Твоя страна</Text>
           </HStack>
           <HStack alignItems={"center"}>
             <Icon name="location-arrow" size={15} color="#000000" />
@@ -65,17 +81,22 @@ const Home = () => {
         <Icon name="sync" size={50}></Icon>
       </HStack>
 
-      <Box alignItems={"center"}>
+      <HStack alignItems={"center"} mb={"15px"} space={3}>
         <Input
+        flex={1}
           bg={"#fff"}
           px={"20px"}
           py={"15px"}
           placeholder={"Выберете авто"}
           fontSize={"20px"}
           borderRadius={"10px"}
-          mb={"15px"}
+          borderWidth={"0"}
+          onChangeText={setValue}
         />
-      </Box>
+        <Pressable onPress={() => searchCar(value)} p={"20px"} bg={"#fff"} rounded={"lg"}>
+          <Icon name="search"/>
+        </Pressable>
+      </HStack>
       <Box>
         <ScrollView
           horizontal={true}
@@ -94,6 +115,7 @@ const Home = () => {
             rounded="lg"
             justifyContent={"center"}
             alignItems={"center"}
+            onPress={() => searchCar("BMW")}
           >
               <Image
                 source={{
@@ -111,6 +133,7 @@ const Home = () => {
             rounded="lg"
             justifyContent={"center"}
             alignItems={"center"}
+            onPress={() => searchCar("MERCEDES")}
           >
             <Image
               source={{
@@ -128,6 +151,7 @@ const Home = () => {
             rounded="lg"
             justifyContent={"center"}
             alignItems={"center"}
+            onPress={() => searchCar("AUDI")}
           >
             <Image
               source={{
@@ -146,6 +170,7 @@ const Home = () => {
             rounded="lg"
             justifyContent={"center"}
             alignItems={"center"}
+            onPress={() => searchCar("TESLA")}
           >
             <Image
               source={{
@@ -164,6 +189,7 @@ const Home = () => {
             rounded="lg"
             justifyContent={"center"}
             alignItems={"center"}
+            onPress={() => searchCar("BENTLEY")}
           >
             <Image
               source={{
@@ -172,6 +198,7 @@ const Home = () => {
               resizeMode={"contain"}
               alt="Bentley"
               size={80}
+              
             />
           </Button>
           <Button
@@ -182,6 +209,7 @@ const Home = () => {
             rounded="lg"
             justifyContent={"center"}
             alignItems={"center"}
+            onPress={() => searchCar("PORSCHE")}
           >
             <Image
               source={{
@@ -189,8 +217,9 @@ const Home = () => {
               }}
               opacity={"0.8"}
               resizeMode={"contain"}
-              alt="BMW"
+              alt="PORSCHE"
               size={100}
+              
             />
           </Button>
         </ScrollView>
@@ -202,6 +231,7 @@ const Home = () => {
       >
         {cars?.map((cars) => (
           <CarCart
+           key={cars.id}
             nameModel={cars.nameModel}
             hp={cars.hp}
             image={cars.image}
