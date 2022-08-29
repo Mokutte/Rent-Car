@@ -4,6 +4,7 @@ import {
     Image,
     HStack,
     VStack,
+    Pressable,
   } from "native-base";
   import Icon from "react-native-vector-icons/FontAwesome5";
   import { CarType } from "./../models/CarType"
@@ -12,7 +13,7 @@ import {
 
 export  const CarCart = (props : CarType) => {
   return (
-    <Box bg="#fff" rounded="lg" px={3} mb={15}>
+    <Box bg="#fff" rounded="lg" px={3} >
         <HStack>
           <VStack mr={3}>
             <Image

@@ -24,15 +24,16 @@ const StackNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: "green",
+        tabBarActiveTintColor: "black",
         tabBarInactiveTintColor: "gray",
         headerShown: false,
       })}
     >
-      <Tab.Screen
+       <Tab.Screen
         name="Cars"
         component={Cars}
         options={{
+          title: "Cars",
           tabBarLabel: "Cars",
           tabBarIcon: ({ color, size }) => (
             // @ts-ignore
@@ -62,8 +63,7 @@ const StackNavigation = () => {
           ),
         }}
       />
-      
-      
+     
       <Tab.Screen
         name="Profile"
         component={Profile}

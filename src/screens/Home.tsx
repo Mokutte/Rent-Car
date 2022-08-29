@@ -19,7 +19,7 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 import { CarCart } from "../components/CarCart";
 import { CarType } from "./../models/CarType";
 
-const Home = () => {
+const Home = ({navigation} : any) => {
   const [cars, setCars] = useState<CarType[]>();
   const [value, setValue] = useState<string | undefined>();
 
@@ -39,13 +39,12 @@ const Home = () => {
     axios
       .get(`http://192.168.0.18:3001/cars?nameModel_like=${value}`)
       .then((response) => {
-        
         setCars(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   return (
     <View px={"5"} pt={70} flex={1}>
@@ -62,7 +61,6 @@ const Home = () => {
               fontWeight={"bold"}
               fontSize={"20px"}
               borderWidth={"0"}
-              
               placeholder="Выберете страну"
               pb={"12.5px"}
               _selectedItem={{
@@ -72,7 +70,7 @@ const Home = () => {
               mt={1}
             >
               <Select.Item label="Россия" value="ux" />
-              <Select.Item label="Беларусияdsfgsd" value="web" />
+              <Select.Item label="Беларусия" value="web" />
               <Select.Item label="Армения" value="cross" />
               <Select.Item label="Грузия" value="ui" />
               <Select.Item label="Таджикистан" value="backend" />
@@ -85,7 +83,7 @@ const Home = () => {
 
       <HStack alignItems={"center"} mb={"15px"} space={3}>
         <Input
-        flex={1}
+          flex={1}
           bg={"#fff"}
           px={"20px"}
           py={"15px"}
@@ -95,9 +93,14 @@ const Home = () => {
           borderWidth={"0"}
           onChangeText={setValue}
         />
-        <Pressable onPress={() => searchCar(value)} p={"20px"} bg={"#fff"} rounded={"lg"}>
+        <Pressable
+          onPress={() => searchCar(value)}
+          p={"20px"}
+          bg={"#fff"}
+          rounded={"lg"}
+        >
           {/* @ts-ignore */}
-          <Icon name="search"/>
+          <Icon name="search" />
         </Pressable>
       </HStack>
       <Box>
@@ -120,13 +123,13 @@ const Home = () => {
             alignItems={"center"}
             onPress={() => searchCar("BMW")}
           >
-              <Image
-                source={{
-                  uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png",
-                }}
-                alt="BMW"
-                size={60}
-              />
+            <Image
+              source={{
+                uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png",
+              }}
+              alt="BMW"
+              size={60}
+            />
           </Button>
           <Button
             bg="#d1d1d19f"
@@ -201,7 +204,6 @@ const Home = () => {
               resizeMode={"contain"}
               alt="Bentley"
               size={80}
-              
             />
           </Button>
           <Button
@@ -222,7 +224,6 @@ const Home = () => {
               resizeMode={"contain"}
               alt="PORSCHE"
               size={100}
-              
             />
           </Button>
         </ScrollView>
@@ -233,17 +234,45 @@ const Home = () => {
         _contentContainerStyle={{}}
       >
         {cars?.map((cars) => (
-          <CarCart
-            key={cars.id}
-            nameModel={cars.nameModel}
-            hp={cars.hp}
-            image={cars.image}
-            desk={cars.desk}
-            actuator={cars.actuator}
-            price={cars.price}
-            typefuel={cars.typefuel}
-            star={cars.star}
-          />
+          <Pressable key={cars.id} onPress={() => navigation.navigate("Cars", {id: cars.id})}>
+            {({ isHovered, isFocused, isPressed }) => {
+              return (
+                <Box
+                
+                rounded={"lg"}
+                mb={15}
+                  borderColor="coolGray.300"
+                  // shadow="3"
+                  bg={
+                    isPressed
+                      ? "coolGray.200"
+                      : isHovered
+                      ? "coolGray.200"
+                      : "coolGray.100"
+                  }
+                  style={{
+                    transform: [
+                      {
+                        scale: isPressed ? 0.97 : 1,
+                      },
+                    ],
+                    
+                  }}
+                >
+                  <CarCart
+                    nameModel={cars.nameModel}
+                    hp={cars.hp}
+                    image={cars.image}
+                    desk={cars.desk}
+                    actuator={cars.actuator}
+                    price={cars.price}
+                    typefuel={cars.typefuel}
+                    star={cars.star}
+                  />
+                </Box>
+              );
+            }}
+          </Pressable>
         ))}
       </ScrollView>
     </View>
